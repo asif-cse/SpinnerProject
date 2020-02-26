@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     ArrayList<String> titleArryList;
     private boolean firstSelection = true;
+
     private int[] flags ={R.drawable.bangladesh,R.drawable.hong_kong,R.drawable.thailand,R.drawable.cambodia,R.drawable.india,R.drawable.vieatnam,R.drawable.singapur,R.drawable.malaysia,R.drawable.indonesia};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter(this,flags,countryNames);
         spinner.setAdapter(myAdapter);
 
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -57,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     firstSelection =false ;
                 }else {
                     Intent intent = new Intent(MainActivity.this,CountryDetails.class);
-                    intent.putExtra("titles",titleArryList.get(position));
+                    intent.putExtra("titles",countryNames[position]);
+                    intent.putExtra("flags",flags[position]);
+                    intent.putExtra("details",titleArryList.get(position));
                     startActivity(intent);
 
                 }

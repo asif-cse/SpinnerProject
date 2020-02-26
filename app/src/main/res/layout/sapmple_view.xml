@@ -9,14 +9,14 @@
     <LinearLayout
         android:padding="5dp"
         android:background="#F5F4F2"
+        android:elevation="6dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="70dp">
         <ImageView
             android:id="@+id/spinnerImagesId"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:src="@drawable/bangladesh"
-            android:padding="5dp"
-            android:layout_height="50dp">
+            android:layout_height="fill_parent">
 
         </ImageView>
 
